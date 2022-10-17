@@ -3,10 +3,7 @@ package ru.ydubovitsky.grammarrushspring.entity;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -20,4 +17,7 @@ public class Task {
     private String task;
 
     private String answer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Theme theme;
 }

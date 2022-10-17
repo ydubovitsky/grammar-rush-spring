@@ -10,5 +10,6 @@ public class TaskResponseDto {
     private Long id;
     private String task;
     private String answer;
+    private String themeName;
 
 }

@@ -3,8 +3,10 @@ package ru.ydubovitsky.grammarrushspring.service;
 import com.thedeanda.lorem.LoremIpsum;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.ydubovitsky.grammarrushspring.entity.Task;
+import ru.ydubovitsky.grammarrushspring.entity.Theme;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -13,6 +15,7 @@ import java.util.stream.Stream;
 
 @Service
 @Qualifier("MockTaskService")
+@Primary
 @AllArgsConstructor
 public class TaskServiceMockImpl implements TaskService {
 
@@ -26,6 +29,9 @@ public class TaskServiceMockImpl implements TaskService {
                 .map(value -> Task.builder()
                         .id(Long.valueOf(value))
                         .task(loremIpsum.getWords(ThreadLocalRandom.current().nextInt(MIN, MAX + 1)))
+                        .theme(Theme.builder()
+                                .name(loremIpsum.getTitle(2))
+                                .build())
                         .answer(loremIpsum.getWords(2))
                         .build()
                 ).collect(Collectors.toList());

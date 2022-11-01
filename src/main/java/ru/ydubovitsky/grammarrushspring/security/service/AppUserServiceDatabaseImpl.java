@@ -31,7 +31,7 @@ public class AppUserServiceDatabaseImpl implements AppUserService {
 
     @Override
     public AppUser registerNewAppUser(AppUser appUser) {
-        appUser.setRoles(Set.of(RolesEnum.USER));
+        appUser.setRoles(Set.of(RolesEnum.USER, RolesEnum.ADMIN)); //FIXME! Remove Admin!
         appUser.setIsAccountNonExpired(true);
         appUser.setIsAccountNonLocked(true);
         appUser.setIsCredentialsNonExpired(true);

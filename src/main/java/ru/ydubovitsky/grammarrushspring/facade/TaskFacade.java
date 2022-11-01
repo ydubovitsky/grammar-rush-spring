@@ -1,5 +1,6 @@
 package ru.ydubovitsky.grammarrushspring.facade;
 
+import ru.ydubovitsky.grammarrushspring.dto.TaskRequestDto;
 import ru.ydubovitsky.grammarrushspring.dto.TaskResponseDto;
 import ru.ydubovitsky.grammarrushspring.entity.Task;
 
@@ -19,6 +20,14 @@ public class TaskFacade {
                 .id(taskResponseDto.getId())
                 .answer(taskResponseDto.getAnswer())
                 .task(taskResponseDto.getTask())
+                .build();
+    }
+
+    public static Task taskRequestDtoToTask(TaskRequestDto taskRequestDto) {
+        return Task.builder()
+                .task(taskRequestDto.getTask())
+                .answer(taskRequestDto.getAnswer())
+                .hint(taskRequestDto.getHint())
                 .build();
     }
 

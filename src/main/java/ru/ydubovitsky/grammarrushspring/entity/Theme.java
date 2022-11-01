@@ -15,8 +15,9 @@ public class Theme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Short id;
 
+    @Column(unique = true)
     private String name;
 
     @OneToMany(

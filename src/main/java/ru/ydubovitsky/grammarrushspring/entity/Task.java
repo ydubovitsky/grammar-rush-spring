@@ -1,13 +1,16 @@
 package ru.ydubovitsky.grammarrushspring.entity;
 
-import lombok.Builder;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Task {
 
     @Id
@@ -18,6 +21,9 @@ public class Task {
 
     private String answer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    private String hint;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Theme theme;
 }

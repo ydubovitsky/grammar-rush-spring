@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import ru.ydubovitsky.grammarrushspring.dto.TaskRequestDto;
 import ru.ydubovitsky.grammarrushspring.entity.Task;
 import ru.ydubovitsky.grammarrushspring.entity.Theme;
 
@@ -15,7 +16,6 @@ import java.util.stream.Stream;
 
 @Service
 @Qualifier("MockTaskService")
-@Primary
 @AllArgsConstructor
 public class TaskServiceMockImpl implements TaskService {
 
@@ -35,5 +35,11 @@ public class TaskServiceMockImpl implements TaskService {
                         .answer(loremIpsum.getWords(2))
                         .build()
                 ).collect(Collectors.toList());
+    }
+
+    //TODO Fixme
+    @Override
+    public Task addNewTask(TaskRequestDto taskRequestDto) {
+        return null;
     }
 }

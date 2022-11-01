@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import ru.ydubovitsky.grammarrushspring.dto.TaskRequestDto;
 import ru.ydubovitsky.grammarrushspring.dto.TaskResponseDto;
 import ru.ydubovitsky.grammarrushspring.entity.Task;
 import ru.ydubovitsky.grammarrushspring.facade.TaskFacade;
@@ -23,7 +24,7 @@ public class TaskController {
 
     private final TaskService taskService;
 
-    public TaskController(@Qualifier("MockTaskService") TaskService taskService) {
+    public TaskController(@Qualifier("TaskServiceDatabaseImpl") TaskService taskService) {
         this.taskService = taskService;
     }
 
@@ -38,6 +39,12 @@ public class TaskController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<TaskResponseDto> addNewTask(@RequestBody TaskRequestDto taskRequestDto) {
+        Task savedTask = taskService.addNewTask(taskRequestDto);
+        return ResponseEntity.ok(TaskFacade.taskToTaskResponseDto(savedTask));
     }
 
 }

@@ -23,6 +23,6 @@ WORKDIR /opt/app
 
 # Copy the dining-room-spring.jar from the maven stage to the /opt/app directory of the current stage.
 # TODO How i can set name of the final .jar?
-COPY --from=maven ./app/target/grammar-rush-spring.jar .
+COPY --from=maven ./app/target/infinity-grammar-spring.jar .
 EXPOSE 8080
-ENTRYPOINT ["java","-jar", "grammar-rush-spring.jar"]
+ENTRYPOINT ["java","-jar", "infinity-grammar-spring.jar"]

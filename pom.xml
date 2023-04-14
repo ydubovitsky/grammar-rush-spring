@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.y-dubovitsky</groupId>
-    <artifactId>grammar-rush-spring</artifactId>
+    <artifactId>infinity-grammar-spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>grammar-rush-spring</name>
-    <description>Backend for GrammarRush application</description>
+    <name>infinity-grammar-spring</name>
+    <description>Backend for Infinity Grammar application</description>
     <properties>
         <java.version>11</java.version>
     </properties>

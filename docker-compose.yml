@@ -3,9 +3,9 @@
 
 version: '3'
 services:
-  # You can rename this service special for docker-hub like: ydubovitsky/grammar-rush
-  grammar-rush-spring:
-    container_name: grammar-rush-spring
+  # You can rename this service special for docker-hub like: ydubovitsky/infinity-grammar-spring
+  infinity-grammar-spring:
+    container_name: infinity-grammar-spring
     build:
       dockerfile: ./docker/production/Dockerfile
     environment:

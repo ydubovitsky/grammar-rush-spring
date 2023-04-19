@@ -29,7 +29,7 @@ public class TaskServiceMockImpl implements TaskService {
                         .id(Long.valueOf(value))
                         .task(loremIpsum.getWords(ThreadLocalRandom.current().nextInt(MIN, MAX + 1)))
                         .theme(Theme.builder()
-                                .name(loremIpsum.getTitle(2))
+                                .themeName(loremIpsum.getTitle(2))
                                 .build())
                         .answer(loremIpsum.getWords(2))
                         .build()

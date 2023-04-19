@@ -10,14 +10,14 @@ public class ThemeFacade {
 
     public static Theme themeRequestDtoToTheme(ThemeRequestDto themeRequestDto) {
         return Theme.builder()
-                .name(themeRequestDto.getName())
+                .themeName(themeRequestDto.getThemeName())
                 .build();
     }
 
     public static ThemeResponseDto themeToThemeResponseDto(Theme theme) {
         return ThemeResponseDto.builder()
                 .id(theme.getId())
-                .name(theme.getName())
+                .themeName(theme.getThemeName())
                 .taskList(theme.getTaskList()
                         .stream()
                         .map(task -> TaskFacade.taskToTaskResponseDto(task))

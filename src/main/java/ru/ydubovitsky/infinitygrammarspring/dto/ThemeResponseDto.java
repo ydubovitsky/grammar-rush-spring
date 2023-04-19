@@ -12,7 +12,7 @@ import java.util.List;
 public class ThemeResponseDto {
 
     private Short id;
-    private String name;
+    private String themeName;
     private List<TaskResponseDto> taskList;
 
 }

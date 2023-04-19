@@ -17,8 +17,8 @@ public class Theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Short id;
 
-    @Column(unique = true)
-    private String name;
+    @Column(unique = true, nullable = false)
+    private String themeName;
 
     @OneToMany(
             mappedBy = "theme",

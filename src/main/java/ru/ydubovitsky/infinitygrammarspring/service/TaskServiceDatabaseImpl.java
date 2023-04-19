@@ -33,11 +33,11 @@ public class TaskServiceDatabaseImpl implements TaskService {
 
     @Override
     public Task addNewTask(TaskRequestDto taskRequestDto) {
-        Theme theme = themeService.findByName(taskRequestDto.getTheme());
+        Theme theme = themeService.findByName(taskRequestDto.getThemeName());
         if (Objects.isNull(theme)) {
             //! create and save new theme
             theme = themeService.addNewTheme(Theme.builder()
-                    .name(taskRequestDto.getTheme())
+                    .themeName(taskRequestDto.getThemeName())
                     .build());
         }
         Task task = TaskFacade.taskRequestDtoToTask(taskRequestDto);

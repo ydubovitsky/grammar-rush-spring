@@ -11,7 +11,7 @@ public class TaskFacade {
                 .id(task.getId())
                 .answer(task.getAnswer())
                 .task(task.getTask())
-                .themeName(task.getTheme().getName())
+                .themeName(task.getTheme().getThemeName())
                 .build();
     }
 

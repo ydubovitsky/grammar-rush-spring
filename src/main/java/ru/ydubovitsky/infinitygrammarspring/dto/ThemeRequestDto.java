@@ -8,6 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 public class ThemeRequestDto {
 
-    private String name;
+    private String themeName;
 
 }

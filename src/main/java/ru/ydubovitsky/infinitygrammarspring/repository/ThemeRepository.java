@@ -5,6 +5,6 @@ import ru.ydubovitsky.infinitygrammarspring.entity.Theme;
 
 public interface ThemeRepository extends JpaRepository<Theme, Short> {
 
-    Theme findByName(String name);
+    Theme findByThemeName(String themeName);
 
 }

@@ -18,7 +18,7 @@ public class ThemeServiceDatabaseImpl implements ThemeService {
     @Override
     public Theme addNewTheme(Theme theme) {
         Theme savedTheme = themeRepository.save(theme);
-        log.info(String.format("Theme %s - saved", theme.getName()));
+        log.info(String.format("Theme %s - saved", theme.getThemeName()));
         return savedTheme;
     }
 
@@ -29,6 +29,6 @@ public class ThemeServiceDatabaseImpl implements ThemeService {
 
     @Override
     public Theme findByName(String name) {
-        return themeRepository.findByName(name);
+        return themeRepository.findByThemeName(name);
     }
 }

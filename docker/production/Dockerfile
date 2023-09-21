@@ -1,6 +1,6 @@
 # How to run me?
-# docker build . -f ./docker/production/Dockerfile -t grammar-rush-spring:0.0.1
-# docker run -d --rm -p 80:8000 --name memorush-spring grammar-rush-spring:0.0.1
+# docker build . -f ./docker/production/Dockerfile -t yeap-english-spring:0.0.1
+# docker run -d --rm -p 80:8000 --name yeap-english-spring yeap-english-spring:0.0.1
 
 # How to make request from cmd?
 # curl -v http://localhost:80/api/v1/...
@@ -23,6 +23,6 @@ WORKDIR /opt/app
 
 # Copy the dining-room-spring.jar from the maven stage to the /opt/app directory of the current stage.
 # TODO How i can set name of the final .jar?
-COPY --from=maven ./app/target/infinity-grammar-spring.jar .
+COPY --from=maven ./app/target/yeap-english-spring.jar .
 EXPOSE 8080
-ENTRYPOINT ["java","-jar", "infinity-grammar-spring.jar"]
+ENTRYPOINT ["java","-jar", "yeap-english-spring.jar"]
